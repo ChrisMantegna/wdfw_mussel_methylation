@@ -1,5 +1,0 @@
-Module	Section	Sample Name	Source
-FastQC	all_sections	69M_1	/Users/cmantegna/Documents/GitHub/mussel_methylation/output/qc_reports/69M_1_fastqc.zip
-FastQC	all_sections	69M_2	/Users/cmantegna/Documents/GitHub/mussel_methylation/output/qc_reports/69M_2_fastqc.zip
-FastQC	all_sections	239M_1	/Users/cmantegna/Documents/GitHub/mussel_methylation/output/qc_reports/239M_1_fastqc.zip
-FastQC	all_sections	239M_2	/Users/cmantegna/Documents/GitHub/mussel_methylation/output/qc_reports/239M_2_fastqc.zip
