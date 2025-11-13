@@ -6,9 +6,31 @@ REF_URL="https://api.ncbi.nlm.nih.gov/datasets/v2/genome/accession/GCF_036588685
 
 TRIM_DIR="../data/trimmed"        # from simple_trim.sh outputs
 REF_DIR="../data/ref"             # where reference FASTA + Bismark index will live
-ALIGN_DIR="../output/aligned"       # where Bismark results go
+ALIGN_DIR="../output/aligned"     # where Bismark results go
 
 mkdir -p "$REF_DIR" "$ALIGN_DIR"
+
+# ---------- Tool discovery ----------
+BISMARK_BIN="${BISMARK_BIN:-$(command -v bismark || true)}"
+BISMARK_GENOME_PREP_BIN="${BISMARK_GENOME_PREP_BIN:-$(command -v bismark_genome_preparation || true)}"
+
+if [ -z "$BISMARK_BIN" ]; then
+  BISMARK_BIN="$(find /home/shared -type f -iname bismark -perm -111 2>/dev/null | head -n1 || true)"
+fi
+if [ -z "$BISMARK_GENOME_PREP_BIN" ]; then
+  BISMARK_GENOME_PREP_BIN="$(find /home/shared -type f -iname bismark_genome_preparation -perm -111 2>/dev/null | head -n1 || true)"
+fi
+
+# Optional: ensure bowtie2 is available (Bismark depends on it)
+BOWTIE2_BIN="${BOWTIE2_BIN:-$(command -v bowtie2 || true)}"
+if [ -z "$BOWTIE2_BIN" ]; then
+  BOWTIE2_BIN="$(find /home/shared -type f -iname bowtie2 -perm -111 2>/dev/null | head -n1 || true)"
+fi
+
+# Guard rails
+[ -n "$BISMARK_BIN" ] && [ -x "$BISMARK_BIN" ] || { echo "ERROR: bismark not found. Set BISMARK_BIN=/full/path/to/bismark"; exit 1; }
+[ -n "$BISMARK_GENOME_PREP_BIN" ] && [ -x "$BISMARK_GENOME_PREP_BIN" ] || { echo "ERROR: bismark_genome_preparation not found. Set BISMARK_GENOME_PREP_BIN=/full/path/to/bismark_genome_preparation"; exit 1; }
+[ -n "$BOWTIE2_BIN" ] && [ -x "$BOWTIE2_BIN" ] || { echo "WARNING: bowtie2 not found in PATH; Bismark may fail. Set BOWTIE2_BIN=/full/path/to/bowtie2 or activate the env."; }
 
 echo "=== [1/3] Download and prepare reference genome ==="
 
@@ -35,7 +57,6 @@ fi
 GENOME_FA="$REF_DIR/genome.fa"
 if [ ! -s "$GENOME_FA" ]; then
   echo "Combining FASTA files into $GENOME_FA ..."
-  # NCBI Datasets typically stores sequences under: unpacked/ncbi_dataset/data/*/*.fna (or .fa/.fasta)
   find "$UNPACK_DIR" -type f \( -iname "*.fna" -o -iname "*.fa" -o -iname "*.fasta" \) -print0 \
     | sort -z \
     | xargs -0 cat > "$GENOME_FA"
@@ -46,7 +67,7 @@ fi
 # Prepare Bismark genome (creates Bisulfite_Genome and Bowtie2 index); skip if already present
 if [ ! -d "$REF_DIR/Bisulfite_Genome" ]; then
   echo "Running bismark_genome_preparation ..."
-  bismark_genome_preparation "$REF_DIR"
+  "$BISMARK_GENOME_PREP_BIN" "$REF_DIR"
 else
   echo "Bismark genome already prepared in $REF_DIR (skipping)."
 fi
@@ -60,20 +81,19 @@ for R1 in "$TRIM_DIR"/*_R1.fastp-trim.fq.gz; do
   R2="$TRIM_DIR/${sample}_R2.fastp-trim.fq.gz"
 
   if [ ! -f "$R2" ]; then
-    echo "⚠️  Skipping $sample: missing $R2"
+    echo "Skipping $sample: missing $R2"
     continue
   fi
 
   # Skip if already aligned (Bismark writes SAMPLE_R1.fastp-trim_bismark_bt2_pe.bam by default)
   OUT_BAM_PATTERN="$ALIGN_DIR/${sample}"*_bismark_bt2_pe.bam
   if compgen -G "$OUT_BAM_PATTERN" > /dev/null; then
-    echo "✅ $sample already aligned (BAM exists). Skipping."
+    echo "$sample already aligned (BAM exists). Skipping."
     continue
   fi
 
   echo "--- Aligning $sample ---"
-  # Non-directional as in your example; remove flag if your library is directional
-  bismark \
+  "$BISMARK_BIN" \
     --genome "$REF_DIR" \
     --non_directional \
     -1 "$R1" \
@@ -81,7 +101,7 @@ for R1 in "$TRIM_DIR"/*_R1.fastp-trim.fq.gz; do
     -o "$ALIGN_DIR" \
     > "$ALIGN_DIR/${sample}_stdout.log" 2> "$ALIGN_DIR/${sample}_stderr.log"
 
-  echo "✅ $sample alignment complete."
+  echo "$sample alignment complete."
 done
 shopt -u nullglob
 

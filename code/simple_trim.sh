@@ -7,6 +7,26 @@ TRIM_DIR="../data/trimmed"
 
 mkdir -p "$TRIM_DIR"
 
+# Tool lookup
+FASTP_BIN="${FASTP_BIN:-$(command -v fastp || true)}"
+FASTQC_BIN="${FASTQC_BIN:-$(command -v fastqc || true)}"
+MULTIQC_BIN="${MULTIQC_BIN:-$(command -v multiqc || true)}"
+
+if [ -z "$FASTP_BIN" ]; then
+  FASTP_BIN="$(find /home/shared -type f -iname fastp -perm -111 2>/dev/null | head -n1 || true)"
+fi
+if [ -z "$FASTQC_BIN" ]; then
+  FASTQC_BIN="$(find /home/shared -type f -iname fastqc -perm -111 2>/dev/null | head -n1 || true)"
+fi
+if [ -z "$MULTIQC_BIN" ]; then
+  MULTIQC_BIN="$(find /home/shared -type f -iname multiqc -perm -111 2>/dev/null | head -n1 || true)"
+fi
+
+# Guard rails
+[ -n "$FASTP_BIN" ] && [ -x "$FASTP_BIN" ] || { echo "ERROR: fastp not found. Set FASTP_BIN=/full/path/to/fastp"; exit 1; }
+[ -n "$FASTQC_BIN" ] && [ -x "$FASTQC_BIN" ] || { echo "ERROR: fastqc not found. Set FASTQC_BIN=/full/path/to/fastqc"; exit 1; }
+[ -n "$MULTIQC_BIN" ] && [ -x "$MULTIQC_BIN" ] || { echo "ERROR: multiqc not found. Set MULTIQC_BIN=/full/path/to/multiqc"; exit 1; }
+
 echo "=== Trimming paired reads with fastp ==="
 for R1 in "$RAW_DIR"/*_1.fastq.gz; do
   # Skip if no R1 files exist
@@ -23,7 +43,7 @@ for R1 in "$RAW_DIR"/*_1.fastq.gz; do
 
   echo "--- Sample: $sample ---"
 
-  fastp \
+  "$FASTP_BIN" \
     --in1 "$R1" \
     --in2 "$R2" \
     --detect_adapter_for_pe \
@@ -41,12 +61,12 @@ for R1 in "$RAW_DIR"/*_1.fastq.gz; do
 done
 
 echo "=== FastQC on trimmed reads ==="
-fastqc -o "$TRIM_DIR" "$TRIM_DIR"/*.fastp-trim.fq.gz
+"$FASTQC_BIN" -o "$TRIM_DIR" "$TRIM_DIR"/*.fastp-trim.fq.gz
 
 echo "=== MultiQC summary ==="
-multiqc "$TRIM_DIR" -o "$TRIM_DIR"
+"$MULTIQC_BIN" "$TRIM_DIR" -o "$TRIM_DIR"
 
 # Optional: remove FastQC zip bundles (HTMLs are kept; zips are usually redundant)
 # rm "$TRIM_DIR"/*.zip 2>/dev/null || true
 
-echo "🎉 Done. Trimmed reads + reports are in: $TRIM_DIR"
+echo "Done. Trimmed reads + reports are in: $TRIM_DIR"
