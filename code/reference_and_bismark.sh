@@ -10,7 +10,7 @@ ALIGN_DIR="../output/aligned"     # where Bismark results go
 
 mkdir -p "$REF_DIR" "$ALIGN_DIR"
 
-# ---------- Tool discovery ----------
+# Tool discovery
 BISMARK_BIN="${BISMARK_BIN:-$(command -v bismark || true)}"
 BISMARK_GENOME_PREP_BIN="${BISMARK_GENOME_PREP_BIN:-$(command -v bismark_genome_preparation || true)}"
 
