@@ -13,24 +13,85 @@ mkdir -p "$REF_DIR" "$ALIGN_DIR"
 # Tool discovery
 BISMARK_BIN="${BISMARK_BIN:-$(command -v bismark || true)}"
 BISMARK_GENOME_PREP_BIN="${BISMARK_GENOME_PREP_BIN:-$(command -v bismark_genome_preparation || true)}"
-
-if [ -z "$BISMARK_BIN" ]; then
-  BISMARK_BIN="$(find /home/shared -type f -iname bismark -perm -111 2>/dev/null | head -n1 || true)"
-fi
-if [ -z "$BISMARK_GENOME_PREP_BIN" ]; then
-  BISMARK_GENOME_PREP_BIN="$(find /home/shared -type f -iname bismark_genome_preparation -perm -111 2>/dev/null | head -n1 || true)"
-fi
-
-# Optional: ensure bowtie2 is available (Bismark depends on it)
 BOWTIE2_BIN="${BOWTIE2_BIN:-$(command -v bowtie2 || true)}"
-if [ -z "$BOWTIE2_BIN" ]; then
-  BOWTIE2_BIN="$(find /home/shared -type f -iname bowtie2 -perm -111 2>/dev/null | head -n1 || true)"
+
+# If not in PATH, search common /home/shared locations 
+if [ -z "$BISMARK_BIN" ]; then
+  for p in \
+    /home/shared/Bismark*/bismark \
+    /home/shared/*/bin/bismark \
+    /home/shared/*/Bismark*/bismark
+  do
+    if [ -f "$p" ] && [ -x "$p" ]; then
+      BISMARK_BIN="$p"
+      break
+    fi
+  done
 fi
 
-# Guard rails
-[ -n "$BISMARK_BIN" ] && [ -x "$BISMARK_BIN" ] || { echo "ERROR: bismark not found. Set BISMARK_BIN=/full/path/to/bismark"; exit 1; }
-[ -n "$BISMARK_GENOME_PREP_BIN" ] && [ -x "$BISMARK_GENOME_PREP_BIN" ] || { echo "ERROR: bismark_genome_preparation not found. Set BISMARK_GENOME_PREP_BIN=/full/path/to/bismark_genome_preparation"; exit 1; }
-[ -n "$BOWTIE2_BIN" ] && [ -x "$BOWTIE2_BIN" ] || { echo "WARNING: bowtie2 not found in PATH; Bismark may fail. Set BOWTIE2_BIN=/full/path/to/bowtie2 or activate the env."; }
+# Final broad search fallback
+if [ -z "$BISMARK_BIN" ]; then
+  BISMARK_BIN="$(find /home/shared -type f \( -iname 'bismark' -o -iname 'bismark*' \) -perm -111 2>/dev/null | head -n1 || true)"
+fi
+
+# bismark genome preparation
+
+if [ -z "$BISMARK_GENOME_PREP_BIN" ]; then
+  for p in \
+    /home/shared/Bismark*/bismark_genome_preparation \
+    /home/shared/*/bin/bismark_genome_preparation \
+    /home/shared/*/Bismark*/bismark_genome_preparation
+  do
+    if [ -f "$p" ] && [ -x "$p" ]; then
+      BISMARK_GENOME_PREP_BIN="$p"
+      break
+    fi
+  done
+fi
+
+if [ -z "$BISMARK_GENOME_PREP_BIN" ]; then
+  BISMARK_GENOME_PREP_BIN="$(
+    find /home/shared -type f -iname 'bismark_genome_preparation*' -perm -111 2>/dev/null | head -n1 || true
+  )"
+fi
+
+# Bowtie 2 
+# Search common module locations
+if [ -z "$BOWTIE2_BIN" ]; then
+  for p in \
+    /home/shared/*/bin/bowtie2 \
+    /home/shared/bowtie2*/bowtie2 \
+    /home/shared/*/bowtie2*/bowtie2 \
+    /opt/*/bowtie2 \
+    /opt/*/bowtie2*/bowtie2 \
+    /usr/local/bin/bowtie2 \
+    /usr/bin/bowtie2
+  do
+    if [ -f "$p" ] && [ -x "$p" ]; then
+      BOWTIE2_BIN="$p"
+      break
+    fi
+  done
+fi
+
+# Broad find() fallback (slow but thorough)
+if [ -z "$BOWTIE2_BIN" ]; then
+  BOWTIE2_BIN="$(
+    find /home/shared /opt /usr/local /usr -type f -iname 'bowtie2' -perm -111 2>/dev/null | head -n1 || true
+  )"
+fi
+
+# Final guard
+if [ -z "$BOWTIE2_BIN" ] || [ ! -x "$BOWTIE2_BIN" ]; then
+  echo "ERROR: bowtie2 not found. Set BOWTIE2_BIN=/full/path/to/bowtie2"
+  exit 1
+fi
+
+# Export so Bismark knows where to find it
+export BOWTIE2_BIN
+export PATH="$(dirname "$BOWTIE2_BIN"):$PATH"
+
+echo "Using Bowtie2 at: $BOWTIE2_BIN"
 
 echo "=== [1/3] Download and prepare reference genome ==="
 
@@ -40,7 +101,7 @@ if [ ! -s "$REF_ZIP" ]; then
   echo "Downloading reference dataset ZIP..."
   curl -L "$REF_URL" -o "$REF_ZIP"
 else
-  echo "Reference ZIP already exists at $REF_ZIP (skipping download)."
+  echo "Reference ZIP already exists at $REF_ZIP"
 fi
 
 # Unpack once
