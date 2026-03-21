@@ -50,7 +50,7 @@ for R1 in "$RAW_DIR"/*_1.fastq.gz; do
   R2="$RAW_DIR/${sample}_2.fastq.gz"
 
   if [ ! -f "$R2" ]; then
-    echo "⚠️  Skipping $sample: missing pair $R2"
+    echo "Skipping $sample: missing pair $R2"
     continue
   fi
 
