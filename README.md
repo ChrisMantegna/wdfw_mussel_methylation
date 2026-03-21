@@ -1,1 +1,1 @@
-DNA Methylation analysis of the mantle tissue of 25 mussels from 6 locations in Puget Sound. Three sites where the PAH contaminant profile is highest amongst the sites from the biomarker work, and three sites with the lowest.
+DNA Methylation analysis of the mantle tissue of 24 mussels from 6 locations in Puget Sound. Three sites where the PAH contaminant profile is highest amongst the sites from the biomarker work, and three sites with the lowest.

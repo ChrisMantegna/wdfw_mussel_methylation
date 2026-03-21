@@ -27,6 +27,9 @@ wget --recursive \
 
 echo "Downloads complete. Files are in $RAW_DIR"
 
+# Concatonate the checksums into one file for quick comparison
+cat *.md5 > combined_checksums.txt
+
 # Run FastQC
 echo "Running FastQC..."
 /home/shared/ fastqc -o "$OUT_DIR" "$RAW_DIR"/*.fastq.gz
