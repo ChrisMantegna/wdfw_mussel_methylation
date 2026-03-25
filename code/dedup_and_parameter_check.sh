@@ -2,7 +2,8 @@
 set -euo pipefail
 
 
-# Input/output folders
+# Paths
+
 READS_DIR="../data/trimmed/fastp"
 GENOME_DIR="../data/ref"
 TEST_OUT_DIR="../output/bismark_min_score"
@@ -31,6 +32,23 @@ SCORES=(
 # Checks
 mkdir -p "${TEST_OUT_DIR}" "${FULL_OUT_DIR}"
 
+if [ -z "$BISMARK_BIN" ]; then
+  for p in \
+    /home/shared/Bismark*/bismark \
+    /home/shared/*/bin/bismark \
+    /home/shared/*/Bismark*/bismark
+  do
+    if [ -f "$p" ] && [ -x "$p" ]; then
+      BISMARK_BIN="$p"
+      break
+    fi
+  done
+fi
+
+if [ -z "$BISMARK_BIN" ]; then
+  BISMARK_BIN="$(find /home/shared -type f \( -iname 'bismark' -o -iname 'bismark*' \) -perm -111 2>/dev/null | head -n1 || true)"
+fi
+
 if [[ ! -x "${BISMARK_BIN}" ]]; then
   echo "ERROR: bismark not found or not executable at ${BISMARK_BIN}"
   exit 1
@@ -41,8 +59,29 @@ if [[ ! -x "${DEDUP_BIN}" ]]; then
   exit 1
 fi
 
-if [[ ! -d "${BOWTIE2_DIR}" ]]; then
-  echo "ERROR: Bowtie2 directory not found at ${BOWTIE2_DIR}"
+if [ -z "$BOWTIE2_BIN" ]; then
+  for p in \
+    /home/shared/*/bin/bowtie2 \
+    /home/shared/bowtie2*/bowtie2 \
+    /home/shared/*/bowtie2*/bowtie2 \
+    /opt/*/bowtie2 \
+    /opt/*/bowtie2*/bowtie2 \
+    /usr/local/bin/bowtie2 \
+    /usr/bin/bowtie2
+  do
+    if [ -f "$p" ] && [ -x "$p" ]; then
+      BOWTIE2_BIN="$p"
+      break
+    fi
+  done
+fi
+
+if [ -z "$BOWTIE2_BIN" ]; then
+  BOWTIE2_BIN="$(find /home/shared /opt /usr/local /usr -type f -iname 'bowtie2' -perm -111 2>/dev/null | head -n1 || true)"
+fi
+
+if [[ ! -d "${BOWTIE2_BIN}" ]]; then
+  echo "ERROR: Bowtie2 directory not found at ${BOWTIE2_BIN}"
   exit 1
 fi
 
