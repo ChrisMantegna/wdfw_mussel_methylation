@@ -1,0 +1,26 @@
+Output will be written into the directory: /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/output/deduplicated/
+Processing paired-end Bismark output file(s) (SAM format):
+../output/aligned_full/69M_R1.fastp-trim_bismark_bt2_pe.bam
+
+
+If there are several alignments to a single position in the genome the first alignment will be chosen. Since the input files are not in any way sorted this is a near-enough random selection of reads.
+
+Checking file >>../output/aligned_full/69M_R1.fastp-trim_bismark_bt2_pe.bam<< for signs of file truncation...
+
+samtools view: writing to standard output failed: Broken pipe
+samtools view: error reading file "../output/aligned_full/69M_R1.fastp-trim_bismark_bt2_pe.bam": Broken pipe
+samtools view: error closing standard output: -1
+
+...passed!
+Output file is: 69M_R1.fastp-trim_bismark_bt2_pe.deduplicated.bam
+
+
+Total number of alignments analysed in ../output/aligned_full/69M_R1.fastp-trim_bismark_bt2_pe.bam:	43219194
+Total number duplicated alignments removed:	4115284 (9.52%)
+Duplicated alignments were found at:	3546990 different position(s)
+
+Total count of deduplicated leftover sequences: 39103910 (90.48% of total)
+
+samtools view: writing to standard output failed: Broken pipe
+samtools view: error reading file "../output/aligned_full/69M_R1.fastp-trim_bismark_bt2_pe.bam": Broken pipe
+samtools view: error closing standard output: -1

@@ -1,0 +1,673 @@
+Bowtie 2 seems to be working fine (tested command 'bowtie2 --version' [2.4.4])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/usr/bin/samtools'
+Reference genome folder provided is ../data/ref/	(absolute path is '/home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/data/ref/)'
+FastQ format assumed (by default)
+
+Input files to be analysed (in current folder '/home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/code'):
+../data/trimmed/fastp/81M_R1.fastp-trim.fq.gz
+../data/trimmed/fastp/81M_R2.fastp-trim.fq.gz
+Library was specified to be not strand-specific (non-directional), therefore alignments to all four possible bisulfite strands (OT, CTOT, OB and CTOB) will be reported
+Output will be written into the directory: /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/output/aligned_full/
+Summary of all aligner options:	-q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+Running Bismark Parallel version. Number of parallel instances to be spawned: 4
+
+Current working directory is: /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/code
+
+Now reading in and storing sequence information of the genome specified in: /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/data/ref/
+
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are ../data/trimmed/fastp/81M_R1.fastp-trim.fq.gz and ../data/trimmed/fastp/81M_R2.fastp-trim.fq.gz
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are ../data/trimmed/fastp/81M_R1.fastp-trim.fq.gz and ../data/trimmed/fastp/81M_R2.fastp-trim.fq.gz
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are ../data/trimmed/fastp/81M_R1.fastp-trim.fq.gz and ../data/trimmed/fastp/81M_R2.fastp-trim.fq.gz
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are ../data/trimmed/fastp/81M_R1.fastp-trim.fq.gz and ../data/trimmed/fastp/81M_R2.fastp-trim.fq.gz
+Finished subdividing ../data/trimmed/fastp/81M_R1.fastp-trim.fq.gz for PID: 0 and offset 2 (sequences written out: 22646309)
+
+Using the subset file >81M_R1.fastp-trim.fq.gz.temp.2< as new in-file 1 (instead of >../data/trimmed/fastp/81M_R1.fastp-trim.fq.gz<)
+Finished subdividing ../data/trimmed/fastp/81M_R1.fastp-trim.fq.gz for PID: 4176783 and offset 4 (sequences written out: 22646309)
+
+Finished subdividing ../data/trimmed/fastp/81M_R1.fastp-trim.fq.gz for PID: 0 and offset 1 (sequences written out: 22646309)
+
+Finished subdividing ../data/trimmed/fastp/81M_R1.fastp-trim.fq.gz for PID: 0 and offset 3 (sequences written out: 22646309)
+
+Using the subset file >81M_R1.fastp-trim.fq.gz.temp.4< as new in-file 1 (instead of >../data/trimmed/fastp/81M_R1.fastp-trim.fq.gz<)
+Using the subset file >81M_R1.fastp-trim.fq.gz.temp.1< as new in-file 1 (instead of >../data/trimmed/fastp/81M_R1.fastp-trim.fq.gz<)
+Using the subset file >81M_R1.fastp-trim.fq.gz.temp.3< as new in-file 1 (instead of >../data/trimmed/fastp/81M_R1.fastp-trim.fq.gz<)
+Finished subdividing ../data/trimmed/fastp/81M_R2.fastp-trim.fq.gz for PID: 0 and offset 2 (sequences written out: 22646309)
+
+Using the subset file >81M_R2.fastp-trim.fq.gz.temp.2< as new in-file 2 (instead of >../data/trimmed/fastp/81M_R2.fastp-trim.fq.gz<)
+Input files are in FastQ format
+Writing a C -> T converted version of the input file 81M_R1.fastp-trim.fq.gz.temp.2 to 81M_R1.fastp-trim.fq.gz.temp.2_C_to_T.fastq
+Writing a G -> A converted version of the input file 81M_R1.fastp-trim.fq.gz.temp.2 to 81M_R1.fastp-trim.fq.gz.temp.2_G_to_A.fastq
+Finished subdividing ../data/trimmed/fastp/81M_R2.fastp-trim.fq.gz for PID: 0 and offset 3 (sequences written out: 22646309)
+
+Using the subset file >81M_R2.fastp-trim.fq.gz.temp.3< as new in-file 2 (instead of >../data/trimmed/fastp/81M_R2.fastp-trim.fq.gz<)
+Input files are in FastQ format
+Finished subdividing ../data/trimmed/fastp/81M_R2.fastp-trim.fq.gz for PID: 0 and offset 1 (sequences written out: 22646309)
+
+Using the subset file >81M_R2.fastp-trim.fq.gz.temp.1< as new in-file 2 (instead of >../data/trimmed/fastp/81M_R2.fastp-trim.fq.gz<)
+Input files are in FastQ format
+Finished subdividing ../data/trimmed/fastp/81M_R2.fastp-trim.fq.gz for PID: 4176783 and offset 4 (sequences written out: 22646309)
+
+Writing a C -> T converted version of the input file 81M_R1.fastp-trim.fq.gz.temp.3 to 81M_R1.fastp-trim.fq.gz.temp.3_C_to_T.fastq
+Writing a G -> A converted version of the input file 81M_R1.fastp-trim.fq.gz.temp.3 to 81M_R1.fastp-trim.fq.gz.temp.3_G_to_A.fastq
+Using the subset file >81M_R2.fastp-trim.fq.gz.temp.4< as new in-file 2 (instead of >../data/trimmed/fastp/81M_R2.fastp-trim.fq.gz<)
+Input files are in FastQ format
+Writing a C -> T converted version of the input file 81M_R1.fastp-trim.fq.gz.temp.1 to 81M_R1.fastp-trim.fq.gz.temp.1_C_to_T.fastq
+Writing a G -> A converted version of the input file 81M_R1.fastp-trim.fq.gz.temp.1 to 81M_R1.fastp-trim.fq.gz.temp.1_G_to_A.fastq
+Writing a C -> T converted version of the input file 81M_R1.fastp-trim.fq.gz.temp.4 to 81M_R1.fastp-trim.fq.gz.temp.4_C_to_T.fastq
+Writing a G -> A converted version of the input file 81M_R1.fastp-trim.fq.gz.temp.4 to 81M_R1.fastp-trim.fq.gz.temp.4_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file 81M_R1.fastp-trim.fq.gz.temp.1 (22646309 sequences in total)
+
+Writing a C -> T converted version of the input file 81M_R2.fastp-trim.fq.gz.temp.1 to 81M_R2.fastp-trim.fq.gz.temp.1_C_to_T.fastq
+Writing a G -> A converted version of the input file 81M_R2.fastp-trim.fq.gz.temp.1 to 81M_R2.fastp-trim.fq.gz.temp.1_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file 81M_R1.fastp-trim.fq.gz.temp.4 (22646309 sequences in total)
+
+Writing a C -> T converted version of the input file 81M_R2.fastp-trim.fq.gz.temp.4 to 81M_R2.fastp-trim.fq.gz.temp.4_C_to_T.fastq
+Writing a G -> A converted version of the input file 81M_R2.fastp-trim.fq.gz.temp.4 to 81M_R2.fastp-trim.fq.gz.temp.4_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file 81M_R1.fastp-trim.fq.gz.temp.2 (22646309 sequences in total)
+
+Writing a C -> T converted version of the input file 81M_R2.fastp-trim.fq.gz.temp.2 to 81M_R2.fastp-trim.fq.gz.temp.2_C_to_T.fastq
+Writing a G -> A converted version of the input file 81M_R2.fastp-trim.fq.gz.temp.2 to 81M_R2.fastp-trim.fq.gz.temp.2_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file 81M_R1.fastp-trim.fq.gz.temp.3 (22646309 sequences in total)
+
+Writing a C -> T converted version of the input file 81M_R2.fastp-trim.fq.gz.temp.3 to 81M_R2.fastp-trim.fq.gz.temp.3_C_to_T.fastq
+Writing a G -> A converted version of the input file 81M_R2.fastp-trim.fq.gz.temp.3 to 81M_R2.fastp-trim.fq.gz.temp.3_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file 81M_R2.fastp-trim.fq.gz.temp.1 (22646309 sequences in total)
+
+Input files are 81M_R1.fastp-trim.fq.gz.temp.1_C_to_T.fastq and 81M_R1.fastp-trim.fq.gz.temp.1_G_to_A.fastq and 81M_R2.fastp-trim.fq.gz.temp.1_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.1_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/data/ref/ with the specified options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.1_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.1_G_to_A.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+
+Created C -> T as well as G -> A converted versions of the FastQ file 81M_R2.fastp-trim.fq.gz.temp.4 (22646309 sequences in total)
+
+Input files are 81M_R1.fastp-trim.fq.gz.temp.4_C_to_T.fastq and 81M_R1.fastp-trim.fq.gz.temp.4_G_to_A.fastq and 81M_R2.fastp-trim.fq.gz.temp.4_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.4_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/data/ref/ with the specified options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.4_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.4_G_to_A.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+
+Created C -> T as well as G -> A converted versions of the FastQ file 81M_R2.fastp-trim.fq.gz.temp.2 (22646309 sequences in total)
+
+Input files are 81M_R1.fastp-trim.fq.gz.temp.2_C_to_T.fastq and 81M_R1.fastp-trim.fq.gz.temp.2_G_to_A.fastq and 81M_R2.fastp-trim.fq.gz.temp.2_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.2_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/data/ref/ with the specified options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.2_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.2_G_to_A.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+
+Created C -> T as well as G -> A converted versions of the FastQ file 81M_R2.fastp-trim.fq.gz.temp.3 (22646309 sequences in total)
+
+Input files are 81M_R1.fastp-trim.fq.gz.temp.3_C_to_T.fastq and 81M_R1.fastp-trim.fq.gz.temp.3_G_to_A.fastq and 81M_R2.fastp-trim.fq.gz.temp.3_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.3_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/data/ref/ with the specified options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.3_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.3_G_to_A.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:1186:1014_1:N:0:GAAGGAAG+GACGTCAT/1	99	NC_086375.1_CT_converted	75644245	24	93M4I12M	=	75644225	-125	TTGTAATTATAATTAAGTTAGTTTTTTATTTTATTTTTAAATTTTTAAAAAGTAAGGGAAAGATTAATTTTGGTTTTATTTATTTTTGAATAATTTTTTTTTTTTTTTT	IIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9III9IIIII9III-IIIIIII9IIIIIIIIIIIIIIIIIII	AS:i:-41	XN:i:0	XM:i:4	XO:i:1	XG:i:4	NM:i:8	MD:Z:95G2A2A0A2	YS:i:-6	YT:Z:CP
+LH00469:254:22HGFVLT4:2:1101:1186:1014_2:N:0:GAAGGAAG+GACGTCAT/2	147	NC_086375.1_CT_converted	75644225	24	109M	=	75644245	125	AATGTGAAAGATTTTTTTTGTTGTAATTATAATTAAGTTAGTTTTTTATTTTATTTTTAAATTTTTAAAAAGTAAGGGAAAGATTAATTTTGGTTTTATTTATTTTTGA	IIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9I-IIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII-	AS:i:-6	XN:i:0	XM:i:1	XO:i:0	XG:i:0	NM:i:1	MD:Z:19T89	YS:i:-41	YT:Z:CP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.1_G_to_A.fastq and 81M_R2.fastp-trim.fq.gz.temp.1_C_to_T.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:4269:1028_1:N:0:GAAGGAAG+GACGTCAT/1	77	*	0	0	*	*	0	0	TTTATGGATTATGTTGTTAGAATTGTTGAATGTTTTTTTTATTATGTTATTTGGTTATTTATTTTTTTAAATATTTTTGTTTTTTAAAAGAATAATTTTTTTTTTT	IIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:4269:1028_2:N:0:GAAGGAAG+GACGTCAT/2	141	*	0	0	*	*	0	0	TAAAAAACAAAAATATTTAAAAAAATAAATAACCAAATAACATAATAAAAAAAACATTCAACAATTCTAACAACATAATCCATAAAATCCATATACATATTATCCA	IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9III9IIII-9IIIIIIIII	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.4_G_to_A.fastq and 81M_R2.fastp-trim.fq.gz.temp.4_C_to_T.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:2465:1014_1:N:0:GAAGGAAG+GACGTCAT/1	77	*	0	0	*	*	0	0	ATTTATATTTTAATATTATGAATGAGTATGAATGTGATTAGTTTTATTTTATGTAGTAATTGTATAAAATTTAATTAAAATGTTTAAATTGTGAAGATTTTAGTTATGTAG	IIIIIIIIIIIIII-IIIIIIIII9IIIIII-IIIIIII9IIIIIIIIIIIIIIII-IIIIIIIIIIIIIIII9IIII-IIIIII9IIIIIIIIII9IIIIIIIIIII9I9	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:2465:1014_2:N:0:GAAGGAAG+GACGTCAT/2	141	*	0	0	*	*	0	0	AACTCAAACAATAACCTCATTTTCCATAATACTTCAATCAAAATAAAACATAACAATCTAAAAATATAACAATCAATTTAAAAAAATCAATTTATCACTTTCTTTTACATA	IIIIII9IIIIII-II-IIIIIIIII9-I9IIIII9IIII9IIIIII99IIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIII9I9IIII-IIIIIIIIIII9I	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.2_G_to_A.fastq and 81M_R2.fastp-trim.fq.gz.temp.2_C_to_T.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:4310:1014_1:N:0:GAAGGAAG+GACGTCAT/1	99	NC_086376.1_CT_converted	14823114	42	111M	=	14823258	255	TTTAGATAAATATTTATTGGAATTTATAAATTAATATTATTATAATTAGTTAAATGAAGTGAAATATATTATTAGTTTTATATAATAATTTGGAAATATTATATTAATAAT	IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIII-IIIIIIIIII9II	AS:i:0	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:111	YS:i:0	YT:Z:CP
+LH00469:254:22HGFVLT4:2:1101:4310:1014_2:N:0:GAAGGAAG+GACGTCAT/2	147	NC_086376.1_CT_converted	14823258	42	111M	=	14823114	-255	ATTTTTTGTATTATTTTTTGATATGTTTTTATTATATTTTTTTATTGTATTTTTGATGGATTTTTAAAAAAAATATTGTTTAGATTTTTTTATGGTTTTTGTAGTAAATTT	IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIII	AS:i:0	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:111	YS:i:0	YT:Z:CP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.3_G_to_A.fastq and 81M_R2.fastp-trim.fq.gz.temp.3_C_to_T.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:1186:1014_1:N:0:GAAGGAAG+GACGTCAT/1	77	*	0	0	*	*	0	0	TTATAATTATAATTAAATTAATTTTTTATTTTATTTTTAAATTTTTAAAAAATAAAAAAAAAATTAATTTTAATTTTATTTATTTTTAAATAATTTTTTTTTTCCTCCC	IIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9III9IIIII9III-IIIIIII9IIIIIIIIIIIIIIIIIII	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:1186:1014_2:N:0:GAAGGAAG+GACGTCAT/2	141	*	0	0	*	*	0	0	TTAAAAATAAATAAAATTAAAATTAATTTTTTTTTTATTTTTTAAAAATTTAAAAATAAAATAAAAAATTAATTTAATTATAATTATAATAAAAAAAATTTTTTATATT	-IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIII-I9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIII	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.1_G_to_A.fastq and 81M_R2.fastp-trim.fq.gz.temp.1_C_to_T.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:4269:1028_1:N:0:GAAGGAAG+GACGTCAT/1	77	*	0	0	*	*	0	0	TTTATAAATTATATTATTAAAATTATTAAATATTTTTTTTATTATATTATTTAATTATTTATTTTTTTAAATATTTTTATTTTTTAAAAAAATAATCCTTCCTCCC	IIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:4269:1028_2:N:0:GAAGGAAG+GACGTCAT/2	141	*	0	0	*	*	0	0	TAAAAAATAAAAATATTTAAAAAAATAAATAATTAAATAATATAATAAAAAAAATATTTAATAATTTTAATAATATAATTTATAAAATTTATATATATATTATTTA	IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9III9IIII-9IIIIIIIII	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.4_G_to_A.fastq and 81M_R2.fastp-trim.fq.gz.temp.4_C_to_T.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:2465:1014_1:N:0:GAAGGAAG+GACGTCAT/1	77	*	0	0	*	*	0	0	ATTTATATTTTAATATTATAAATAAATATAAATATAATTAATTTTATTTTATATAACAATTATATAAAATTTAATTAAAACATTTAAATTATAAAAATTTTAATTATATAA	IIIIIIIIIIIIII-IIIIIIIII9IIIIII-IIIIIII9IIIIIIIIIIIIIIII-IIIIIIIIIIIIIIII9IIII-IIIIII9IIIIIIIIII9IIIIIIIIIII9I9	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:2465:1014_2:N:0:GAAGGAAG+GACGTCAT/2	141	*	0	0	*	*	0	0	AATTTAAATAATAATTTTATTTTTTATAATATTTTAATTAAAATAAAATATAATAATTTAAAAATATAATAATTAATTTAAAAAAATTAATTTATTATTTTTTTTTATATA	IIIIII9IIIIII-II-IIIIIIIII9-I9IIIII9IIII9IIIIII99IIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIII9I9IIII-IIIIIIIIIII9I	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.2_G_to_A.fastq and 81M_R2.fastp-trim.fq.gz.temp.2_C_to_T.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:4310:1014_1:N:0:GAAGGAAG+GACGTCAT/1	77	*	0	0	*	*	0	0	TTTAAATAAATATTTATTAAAATTTATAAATTAATATTATTATAATTAATTAAATAAAATAAAATATATTATTAATTTTATATAATAATTTAAAAATATTATATTAATAAC	IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIII-IIIIIIIIII9II	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:4310:1014_2:N:0:GAAGGAAG+GACGTCAT/2	141	*	0	0	*	*	0	0	AAATTTATTATAAAAATTATAAAAAAATTTAAATAATATTTTTTTTAAAAATTTATTAAAAATATAATAAAAAAATATAATAAAAATATATTAAAAAATAATATAAAAAAT	IIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIII	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.3_G_to_A.fastq and 81M_R2.fastp-trim.fq.gz.temp.3_C_to_T.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:4269:1028_1:N:0:GAAGGAAG+GACGTCAT/1	77	*	0	0	*	*	0	0	TTTATAAATTATATTATTAAAATTATTAAATATTTTTTTTATTATATTATTTAATTATTTATTTTTTTAAATATTTTTATTTTTTAAAAAAATAATCCTTCCTCCC	IIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:4269:1028_2:N:0:GAAGGAAG+GACGTCAT/2	141	*	0	0	*	*	0	0	TAAAAAATAAAAATATTTAAAAAAATAAATAATTAAATAATATAATAAAAAAAATATTTAATAATTTTAATAATATAATTTATAAAATTTATATATATATTATTTA	IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9III9IIII-9IIIIIIIII	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.4_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.4_G_to_A.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:1186:1014_1:N:0:GAAGGAAG+GACGTCAT/1	77	*	0	0	*	*	0	0	TTATAATTATAATTAAATTAATTTTTTATTTTATTTTTAAATTTTTAAAAAATAAAAAAAAAATTAATTTTAATTTTATTTATTTTTAAATAATTTTTTTTTTCCTCCC	IIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9III9IIIII9III-IIIIIII9IIIIIIIIIIIIIIIIIII	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:1186:1014_2:N:0:GAAGGAAG+GACGTCAT/2	141	*	0	0	*	*	0	0	TTAAAAATAAATAAAATTAAAATTAATTTTTTTTTTATTTTTTAAAAATTTAAAAATAAAATAAAAAATTAATTTAATTATAATTATAATAAAAAAAATTTTTTATATT	-IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIII-I9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIII	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.1_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.1_G_to_A.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:2465:1014_1:N:0:GAAGGAAG+GACGTCAT/1	77	*	0	0	*	*	0	0	ATTTATATTTTAATATTATAAATAAATATAAATATAATTAATTTTATTTTATATAACAATTATATAAAATTTAATTAAAACATTTAAATTATAAAAATTTTAATTATATAA	IIIIIIIIIIIIII-IIIIIIIII9IIIIII-IIIIIII9IIIIIIIIIIIIIIII-IIIIIIIIIIIIIIII9IIII-IIIIII9IIIIIIIIII9IIIIIIIIIII9I9	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:2465:1014_2:N:0:GAAGGAAG+GACGTCAT/2	141	*	0	0	*	*	0	0	AATTTAAATAATAATTTTATTTTTTATAATATTTTAATTAAAATAAAATATAATAATTTAAAAATATAATAATTAATTTAAAAAAATTAATTTATTATTTTTTTTTATATA	IIIIII9IIIIII-II-IIIIIIIII9-I9IIIII9IIII9IIIIII99IIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIII9I9IIII-IIIIIIIIIII9I	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.2_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.2_G_to_A.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:4310:1014_1:N:0:GAAGGAAG+GACGTCAT/1	77	*	0	0	*	*	0	0	TTTAAATAAATATTTATTAAAATTTATAAATTAATATTATTATAATTAATTAAATAAAATAAAATATATTATTAATTTTATATAATAATTTAAAAATATTATATTAATAAC	IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIII-IIIIIIIIII9II	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:4310:1014_2:N:0:GAAGGAAG+GACGTCAT/2	141	*	0	0	*	*	0	0	AAATTTATTATAAAAATTATAAAAAAATTTAAATAATATTTTTTTTAAAAATTTATTAAAAATATAATAAAAAAATATAATAAAAATATATTAAAAAATAATATAAAAAAT	IIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIII	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from 81M_R1.fastp-trim.fq.gz.temp.3_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.3_G_to_A.fastq, with the options: -q --score-min L,0,-0.6 --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:1186:1014_1:N:0:GAAGGAAG+GACGTCAT/1	77	*	0	0	*	*	0	0	TTGTAATTATAATTAAGTTAGTTTTTTATTTTATTTTTAAATTTTTAAAAAGTAAGGGAAAGATTAATTTTGGTTTTATTTATTTTTGAATAATTTTTTTTTTTTTTTT	IIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9III9IIIII9III-IIIIIII9IIIIIIIIIIIIIIIIIII	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:1186:1014_2:N:0:GAAGGAAG+GACGTCAT/2	141	*	0	0	*	*	0	0	TCAAAAATAAATAAAACCAAAATTAATCTTTCCCTTACTTTTTAAAAATTTAAAAATAAAATAAAAAACTAACTTAATTATAATTACAACAAAAAAAATCTTTCACATT	-IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIII-I9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIII	YT:Z:UP
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:4269:1028_1:N:0:GAAGGAAG+GACGTCAT/1	83	NC_086386.1_GA_converted	72908616	6	106M	=	72908636	126	AAAAAAAAAAATTATTCTTTTAAAAAACAAAAATATTTAAAAAAATAAATAACCAAATAACATAATAAAAAAAACATTCAACAATTCTAACAACATAATCCATAAA	IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIII	AS:i:-12	XS:i:-18	XN:i:0	XM:i:2	XO:i:0	XG:i:0	NM:i:2	MD:Z:6T2T96	YS:i:0	YT:Z:CP
+LH00469:254:22HGFVLT4:2:1101:4269:1028_2:N:0:GAAGGAAG+GACGTCAT/2	163	NC_086386.1_GA_converted	72908636	6	106M	=	72908616	-126	TAAAAAACAAAAATATTTAAAAAAATAAATAACCAAATAACATAATAAAAAAAACATTCAACAATTCTAACAACATAATCCATAAAATCCATATACATATTATCCA	IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIII9III9IIII-9IIIIIIIII	AS:i:0	XS:i:-6	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:106	YS:i:-12	YT:Z:CP
+
+>>> Writing bisulfite mapping results to 81M_R1.fastp-trim.fq.gz.temp.4_bismark_bt2_pe.bam <<<
+
+
+>>> Writing bisulfite mapping results to 81M_R1.fastp-trim.fq.gz.temp.1_bismark_bt2_pe.bam <<<
+
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:2465:1014_1:N:0:GAAGGAAG+GACGTCAT/1	77	*	0	0	*	*	0	0	ATTTATATTTTAATATTATGAATGAGTATGAATGTGATTAGTTTTATTTTATGTAGTAATTGTATAAAATTTAATTAAAATGTTTAAATTGTGAAGATTTTAGTTATGTAG	IIIIIIIIIIIIII-IIIIIIIII9IIIIII-IIIIIII9IIIIIIIIIIIIIIII-IIIIIIIIIIIIIIII9IIII-IIIIII9IIIIIIIIII9IIIIIIIIIII9I9	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:2465:1014_2:N:0:GAAGGAAG+GACGTCAT/2	141	*	0	0	*	*	0	0	AACTCAAACAATAACCTCATTTTCCATAATACTTCAATCAAAATAAAACATAACAATCTAAAAATATAACAATCAATTTAAAAAAATCAATTTATCACTTTCTTTTACATA	IIIIII9IIIIII-II-IIIIIIIII9-I9IIIII9IIII9IIIIII99IIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIII9I9IIII-IIIIIIIIIII9I	YT:Z:UP
+
+>>> Writing bisulfite mapping results to 81M_R1.fastp-trim.fq.gz.temp.2_bismark_bt2_pe.bam <<<
+
+
+Reading in the sequence files 81M_R1.fastp-trim.fq.gz.temp.4 and 81M_R2.fastp-trim.fq.gz.temp.4
+
+Reading in the sequence files 81M_R1.fastp-trim.fq.gz.temp.1 and 81M_R2.fastp-trim.fq.gz.temp.1
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:4310:1014_1:N:0:GAAGGAAG+GACGTCAT/1	83	NW_026963297.1_GA_converted	2851846	1	111M	=	2851702	-255	ATTATTAATATAATATTTCCAAATTATTATATAAAACTAATAATATATTTCACTTCATTTAACTAATTATAATAATATTAATTTATAAATTCCAATAAATATTTATCTAAA	II9IIIIIIIIII-IIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII	AS:i:0	XS:i:-6	XN:i:0	XM:i:0	XO:i:0	XG:i:0	NM:i:0	MD:Z:111	YS:i:-6	YT:Z:CP
+LH00469:254:22HGFVLT4:2:1101:4310:1014_2:N:0:GAAGGAAG+GACGTCAT/2	163	NW_026963297.1_GA_converted	2851702	1	111M	=	2851846	255	AAATTTACTACAAAAACCATAAAAAAATCTAAACAATATTTTTTTTAAAAATCCATCAAAAATACAATAAAAAAATATAATAAAAACATATCAAAAAATAATACAAAAAAT	IIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIIIIIIIIIIIIIIIIIIIIII	AS:i:-6	XS:i:0	XN:i:0	XM:i:1	XO:i:0	XG:i:0	NM:i:1	MD:Z:46T64	YS:i:0	YT:Z:CP
+
+>>> Writing bisulfite mapping results to 81M_R1.fastp-trim.fq.gz.temp.3_bismark_bt2_pe.bam <<<
+
+
+Reading in the sequence files 81M_R1.fastp-trim.fq.gz.temp.2 and 81M_R2.fastp-trim.fq.gz.temp.2
+
+Reading in the sequence files 81M_R1.fastp-trim.fq.gz.temp.3 and 81M_R2.fastp-trim.fq.gz.temp.3
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1107:20462:2135_1:N:0:GAAGGAAG+GACGTCAT	NW_026963725.1	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1108:52013:2037_1:N:0:GAAGGAAG+GACGTCAT	XM_063589578.1	1231
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1118:45499:21942_1:N:0:GAAGGAAG+GACGTCAT	XM_063568694.1	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1121:13988:20569_1:N:0:GAAGGAAG+GACGTCAT	XM_063554394.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1121:13980:20555_1:N:0:GAAGGAAG+GACGTCAT	XM_063554394.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1127:32309:3872_1:N:0:GAAGGAAG+GACGTCAT	XM_063587628.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1128:47021:11128_1:N:0:GAAGGAAG+GACGTCAT	XM_063575128.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1133:4148:27853_1:N:0:GAAGGAAG+GACGTCAT	XM_063585240.1	1590
+Processed 1000000 sequence pairs so far
+Processed 1000000 sequence pairs so far
+Processed 1000000 sequence pairs so far
+Processed 1000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1142:51123:6855_1:N:0:GAAGGAAG+GACGTCAT	XM_063585141.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1146:15404:12795_1:N:0:GAAGGAAG+GACGTCAT	XM_063541456.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1146:15412:12781_1:N:0:GAAGGAAG+GACGTCAT	XM_063541456.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1146:12248:25233_1:N:0:GAAGGAAG+GACGTCAT	lcl|NC_086376.1_cds_XP_063432538.1_17063	1088
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1153:22202:11954_1:N:0:GAAGGAAG+GACGTCAT	NW_026963406.1	16989
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1164:49335:15582_1:N:0:GAAGGAAG+GACGTCAT	NW_026963725.1	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1172:30618:16409_1:N:0:GAAGGAAG+GACGTCAT	NW_026963801.1	31755
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1172:6470:27054_1:N:0:GAAGGAAG+GACGTCAT	XM_063547267.1	3273
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1173:30342:6099_1:N:0:GAAGGAAG+GACGTCAT	NW_026963443.1	56359
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1176:28918:26410_1:N:0:GAAGGAAG+GACGTCAT	XM_063540003.1	4484
+Processed 2000000 sequence pairs so far
+Processed 2000000 sequence pairs so far
+Processed 2000000 sequence pairs so far
+Processed 2000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1180:25827:23973_1:N:0:GAAGGAAG+GACGTCAT	NW_026963309.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1181:13341:23875_1:N:0:GAAGGAAG+GACGTCAT	XM_063576435.1	4677
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1183:13082:16479_1:N:0:GAAGGAAG+GACGTCAT	NW_026963742.1	18852
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1188:20842:28819_1:N:0:GAAGGAAG+GACGTCAT	XM_063561183.1	1382
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1188:20850:28805_1:N:0:GAAGGAAG+GACGTCAT	XM_063561183.1	1382
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1203:26118:22068_1:N:0:GAAGGAAG+GACGTCAT	XM_063561979.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1206:15890:17417_1:N:0:GAAGGAAG+GACGTCAT	NW_026963443.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1206:15874:17417_1:N:0:GAAGGAAG+GACGTCAT	NW_026963443.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1208:15833:19616_1:N:0:GAAGGAAG+GACGTCAT	XM_063540729.1	4641
+Processed 3000000 sequence pairs so far
+Processed 3000000 sequence pairs so far
+Processed 3000000 sequence pairs so far
+Processed 3000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1246:3290:20541_1:N:0:GAAGGAAG+GACGTCAT	NW_026963443.1	56354
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1255:48153:19672_1:N:0:GAAGGAAG+GACGTCAT	XM_063543397.1	1095
+Processed 4000000 sequence pairs so far
+Processed 4000000 sequence pairs so far
+Processed 4000000 sequence pairs so far
+Processed 4000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1258:40935:13649_1:N:0:GAAGGAAG+GACGTCAT	XM_063541966.1	2321
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1262:12515:11184_1:N:0:GAAGGAAG+GACGTCAT	XR_010105584.1	415
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1265:25414:3619_1:N:0:GAAGGAAG+GACGTCAT	XM_063548479.1	243
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1278:35052:26130_1:N:0:GAAGGAAG+GACGTCAT	XR_010108047.1	2210
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1297:21838:21493_1:N:0:GAAGGAAG+GACGTCAT	XM_063552990.1	2
+Processed 5000000 sequence pairs so far
+Processed 5000000 sequence pairs so far
+Processed 5000000 sequence pairs so far
+Processed 5000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1305:49100:18566_1:N:0:GAAGGAAG+GACGTCAT	XM_063543971.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1305:45960:16689_1:N:0:GAAGGAAG+GACGTCAT	XM_063540167.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1307:37245:2247_1:N:0:GAAGGAAG+GACGTCAT	NW_026963725.1	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1309:2497:19504_1:N:0:GAAGGAAG+GACGTCAT	XM_063575856.1	13880
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1312:18811:16226_1:N:0:GAAGGAAG+GACGTCAT	XM_063550065.1	3
+Processed 6000000 sequence pairs so far
+Processed 6000000 sequence pairs so far
+Processed 6000000 sequence pairs so far
+Processed 6000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1357:37253:5342_1:N:0:GAAGGAAG+GACGTCAT	XM_063543641.1	2932
+Processed 7000000 sequence pairs so far
+Processed 7000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1378:34122:2219_1:N:0:GAAGGAAG+GACGTCAT	XR_010106764.1	973
+Processed 7000000 sequence pairs so far
+Processed 7000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1398:10079:24393_1:N:0:GAAGGAAG+GACGTCAT	NW_026963477.1	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1398:10071:24407_1:N:0:GAAGGAAG+GACGTCAT	NW_026963477.1	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1404:32163:20653_1:N:0:GAAGGAAG+GACGTCAT	XR_010103074.1	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1408:13980:7332_1:N:0:GAAGGAAG+GACGTCAT	XM_063547549.1	2
+Processed 8000000 sequence pairs so far
+Processed 8000000 sequence pairs so far
+Processed 8000000 sequence pairs so far
+Processed 8000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1425:36209:14125_1:N:0:GAAGGAAG+GACGTCAT	lcl|NC_086375.1_cds_XP_063426366.1_11368	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1431:20300:12837_1:N:0:GAAGGAAG+GACGTCAT	lcl|NW_026963602.1_cds_XP_063419551.1_53177	1202
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1431:20308:12823_1:N:0:GAAGGAAG+GACGTCAT	XM_063563560.1	1202
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1431:20292:12823_1:N:0:GAAGGAAG+GACGTCAT	lcl|NW_026963734.1_cds_XP_063419600.1_53226	1202
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1435:14142:27531_1:N:0:GAAGGAAG+GACGTCAT	XM_063544067.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1451:28497:2597_1:N:0:GAAGGAAG+GACGTCAT	XM_063573504.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1451:35392:15512_1:N:0:GAAGGAAG+GACGTCAT	lcl|NW_026963452.1_cds_XP_063419490.1_53121	1063
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1458:32236:22992_1:N:0:GAAGGAAG+GACGTCAT	XM_063553110.1	1
+Processed 9000000 sequence pairs so far
+Processed 9000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1461:41089:15708_1:N:0:GAAGGAAG+GACGTCAT	XM_063566252.1	7274
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1461:41081:15722_1:N:0:GAAGGAAG+GACGTCAT	XM_063566252.1	7274
+Processed 9000000 sequence pairs so far
+Processed 9000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1461:15736:22838_1:N:0:GAAGGAAG+GACGTCAT	XR_010101577.1	485
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1466:33304:11674_1:N:0:GAAGGAAG+GACGTCAT	XM_063555294.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1474:23278:7906_1:N:0:GAAGGAAG+GACGTCAT	XM_063546154.1	883
+Processed 10000000 sequence pairs so far
+Processed 10000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2106:8283:28904_1:N:0:GAAGGAAG+GACGTCAT	XM_063551390.1	3270
+Processed 10000000 sequence pairs so far
+Processed 10000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2112:16780:12486_1:N:0:GAAGGAAG+GACGTCAT	XR_010103707.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2120:42999:11142_1:N:0:GAAGGAAG+GACGTCAT	XM_063580976.1	3610
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2122:28595:11870_1:N:0:GAAGGAAG+GACGTCAT	NW_026963415.1	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2133:17484:10735_1:N:0:GAAGGAAG+GACGTCAT	NW_026963725.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2134:44463:16367_1:N:0:GAAGGAAG+GACGTCAT	lcl|NC_086376.1_cds_XP_063435768.1_18767	7932
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2137:27729:4152_1:N:0:GAAGGAAG+GACGTCAT	XM_063577344.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2140:44779:4922_1:N:0:GAAGGAAG+GACGTCAT	XM_063587298.1	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2140:44771:4936_1:N:0:GAAGGAAG+GACGTCAT	XM_063587298.1	2
+Processed 11000000 sequence pairs so far
+Processed 11000000 sequence pairs so far
+Processed 11000000 sequence pairs so far
+Processed 11000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2157:48396:17907_1:N:0:GAAGGAAG+GACGTCAT	XM_063584303.1	1087
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2181:29566:18902_1:N:0:GAAGGAAG+GACGTCAT	XR_010106639.1	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2182:39673:16787_1:N:0:GAAGGAAG+GACGTCAT	lcl|NC_086383.1_cds_XP_063407063.1_41325	1
+Processed 12000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2185:29509:5188_1:N:0:GAAGGAAG+GACGTCAT	XM_063573506.1	1
+Processed 12000000 sequence pairs so far
+Processed 12000000 sequence pairs so far
+Processed 12000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2188:47563:26802_1:N:0:GAAGGAAG+GACGTCAT	XM_063547549.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2193:37059:7275_1:N:0:GAAGGAAG+GACGTCAT	NW_026963309.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2212:18479:7612_1:N:0:GAAGGAAG+GACGTCAT	XM_063551331.1	432
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2218:11382:10119_1:N:0:GAAGGAAG+GACGTCAT	XM_063577435.1	814
+Processed 13000000 sequence pairs so far
+Processed 13000000 sequence pairs so far
+Processed 13000000 sequence pairs so far
+Processed 13000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2253:48218:29058_1:N:0:GAAGGAAG+GACGTCAT	XM_063587381.1	5684
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2265:29258:5539_1:N:0:GAAGGAAG+GACGTCAT	XM_063592107.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2264:41129:11520_1:N:0:GAAGGAAG+GACGTCAT	NW_026963365.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2268:9052:13733_1:N:0:GAAGGAAG+GACGTCAT	XM_063545763.1	2
+Processed 14000000 sequence pairs so far
+Processed 14000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2275:15218:10567_1:N:0:GAAGGAAG+GACGTCAT	lcl|NC_086384.1_cds_XP_063409272.1_44891	1141
+Processed 14000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2277:39033:12290_1:N:0:GAAGGAAG+GACGTCAT	XR_010106013.1	133
+Processed 14000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2295:28433:19686_1:N:0:GAAGGAAG+GACGTCAT	XR_010103947.1	429
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2305:22461:8984_1:N:0:GAAGGAAG+GACGTCAT	lcl|NC_086375.1_cds_XP_063426840.1_11568	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2313:6114:22768_1:N:0:GAAGGAAG+GACGTCAT	XM_063582129.1	7063
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2313:6106:22754_1:N:0:GAAGGAAG+GACGTCAT	XM_063582129.1	7063
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2314:2764:23412_1:N:0:GAAGGAAG+GACGTCAT	XM_063556620.1	447
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2318:12774:19840_1:N:0:GAAGGAAG+GACGTCAT	NW_026963658.1	1
+Processed 15000000 sequence pairs so far
+Processed 15000000 sequence pairs so far
+Processed 15000000 sequence pairs so far
+Processed 15000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2328:6592:27769_1:N:0:GAAGGAAG+GACGTCAT	XR_010104447.1	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2326:37917:18594_1:N:0:GAAGGAAG+GACGTCAT	XM_063563535.1	1992
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2334:23974:5749_1:N:0:GAAGGAAG+GACGTCAT	XM_063562669.1	2495
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2334:40069:29184_1:N:0:GAAGGAAG+GACGTCAT	lcl|NC_086374.1_cds_XP_063423551.1_8838	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2334:23966:5735_1:N:0:GAAGGAAG+GACGTCAT	XM_063562669.1	2495
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2334:40061:29170_1:N:0:GAAGGAAG+GACGTCAT	lcl|NC_086374.1_cds_XP_063423551.1_8838	1
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2341:11067:25374_1:N:0:GAAGGAAG+GACGTCAT	XR_010101800.1	321
+Processed 16000000 sequence pairs so far
+Processed 16000000 sequence pairs so far
+Processed 16000000 sequence pairs so far
+Processed 16000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2367:15865:27181_1:N:0:GAAGGAAG+GACGTCAT	XM_063565526.1	2768
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2364:37601:11296_1:N:0:GAAGGAAG+GACGTCAT	XM_063541819.1	2704
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2373:10419:9012_1:N:0:GAAGGAAG+GACGTCAT	XM_063556723.1	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2371:1032:15652_1:N:0:GAAGGAAG+GACGTCAG	XR_010107595.1	264
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2386:1486:24813_1:N:0:GAAGGAAG+GACGTCAT	NW_026963316.1	1
+Processed 17000000 sequence pairs so far
+Processed 17000000 sequence pairs so far
+Processed 17000000 sequence pairs so far
+Processed 17000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2436:47644:5735_1:N:0:GAAGGAAG+GACGTCAT	XR_010108738.1	738
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2442:16837:12500_1:N:0:GAAGGAAG+GACGTCAT	XR_010105445.1	388
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2444:25099:23468_1:N:0:GAAGGAAG+GACGTCAT	XM_063564482.1	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2444:25091:23454_1:N:0:GAAGGAAG+GACGTCAT	XM_063564482.1	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2448:38572:29114_1:N:0:GAAGGAAG+GACGTCAT	XR_010102840.1	4072
+Processed 18000000 sequence pairs so far
+Processed 18000000 sequence pairs so far
+Processed 18000000 sequence pairs so far
+Processed 18000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2459:46948:18510_1:N:0:GAAGGAAG+GACGTCAT	lcl|NC_086374.1_cds_XP_063425272.1_10980	2
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2465:33264:14742_1:N:0:GAAGGAAG+GACGTCAT	XM_063562325.1	991
+Processed 19000000 sequence pairs so far
+Processed 19000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:2495:19523:17095_1:N:0:GAAGGAAG+GACGTCAT	NW_026963576.1	1
+Processed 19000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:1102:11034:22264_1:N:0:GAAGGAAG+GACGTCAT	XM_063574937.1	2
+Processed 19000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:1155:17015:22614_1:N:0:GAAGGAAG+GACGTCAT	NW_026963532.1	2
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:1155:16998:22614_1:N:0:GAAGGAAG+GACGTCAT	NW_026963532.1	2
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:1217:49853:2191_1:N:0:GAAGGAAG+GACGTCAT	XM_063561451.1	2
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:1311:31087:1700_1:N:0:GAAGGAAG+GACGTCAT	NW_026963415.1	2
+Processed 20000000 sequence pairs so far
+Processed 20000000 sequence pairs so far
+Processed 20000000 sequence pairs so far
+Processed 20000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:1346:4277:27601_1:N:0:GAAGGAAG+GACGTCAT	NW_026963725.1	1
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:1425:44641:27601_1:N:0:GAAGGAAG+GACGTCAT	XR_010105087.1	1
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:1472:23432:14195_1:N:0:GAAGGAAG+GACGTCAT	NW_026963771.1	24048
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:2102:18932:18061_1:N:0:GAAGGAAG+GACGTCAT	NW_026963319.1	249898
+Processed 21000000 sequence pairs so far
+Processed 21000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:2142:50889:17039_1:N:0:GAAGGAAG+GACGTCAT	lcl|NC_086374.1_cds_XP_063425271.1_10979	2
+Processed 21000000 sequence pairs so far
+Processed 21000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:2178:7142:10399_1:N:0:GAAGGAAG+GACGTCAT	lcl|NC_086377.1_cds_XP_063438855.1_22696	871
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:2213:14223:21479_1:N:0:GAAGGAAG+GACGTCAT	XR_010108605.1	990
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:2231:20235:8942_1:N:0:GAAGGAAG+GACGTCAT	XM_063592692.1	2216
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:2259:29015:15372_1:N:0:GAAGGAAG+GACGTCAT	XM_063544293.1	1967
+Processed 22000000 sequence pairs so far
+Processed 22000000 sequence pairs so far
+Processed 22000000 sequence pairs so far
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:2367:17411:10721_1:N:0:GAAGGAAG+GACGTCAT	lcl|NC_007687.1_cds_YP_448736.1_53268	1
+Processed 22000000 sequence pairs so far
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    22577066 (99.69%) aligned concordantly 0 times
+    29636 (0.13%) aligned concordantly exactly 1 time
+    39607 (0.17%) aligned concordantly >1 times
+0.31% overall alignment rate
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    22575530 (99.69%) aligned concordantly 0 times
+    29304 (0.13%) aligned concordantly exactly 1 time
+    41475 (0.18%) aligned concordantly >1 times
+0.31% overall alignment rate
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    11405241 (50.36%) aligned concordantly 0 times
+    3992858 (17.63%) aligned concordantly exactly 1 time
+    7248210 (32.01%) aligned concordantly >1 times
+49.64% overall alignment rate
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    11391400 (50.30%) aligned concordantly 0 times
+    3990638 (17.62%) aligned concordantly exactly 1 time
+    7264271 (32.08%) aligned concordantly >1 times
+49.70% overall alignment rate
+Processed 22646309 sequences in total
+
+
+Successfully deleted the temporary files 81M_R1.fastp-trim.fq.gz.temp.1_C_to_T.fastq, 81M_R1.fastp-trim.fq.gz.temp.1_G_to_A.fastq, 81M_R2.fastp-trim.fq.gz.temp.1_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.1_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	22646309
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	370520607
+
+Total methylated C's in CpG context:	4552431
+Total methylated C's in CHG context:	421542
+Total methylated C's in CHH context:	2160711
+Total methylated C's in Unknown context:	28562
+
+Total unmethylated C's in CpG context:	39468230
+Total unmethylated C's in CHG context:	59081209
+Total unmethylated C's in CHH context:	264836484
+Total unmethylated C's in Unknown context:	1058543
+
+C methylated in CpG context:	10.3%
+C methylated in CHG context:	0.7%
+C methylated in CHH context:	0.8%
+C methylated in unknown context (CN or CHN):	2.6%
+
+
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    22575601 (99.69%) aligned concordantly 0 times
+    29292 (0.13%) aligned concordantly exactly 1 time
+    41416 (0.18%) aligned concordantly >1 times
+0.31% overall alignment rate
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    22576757 (99.69%) aligned concordantly 0 times
+    30027 (0.13%) aligned concordantly exactly 1 time
+    39525 (0.17%) aligned concordantly >1 times
+0.31% overall alignment rate
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    11402071 (50.35%) aligned concordantly 0 times
+    3994323 (17.64%) aligned concordantly exactly 1 time
+    7249915 (32.01%) aligned concordantly >1 times
+49.65% overall alignment rate
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    11387567 (50.28%) aligned concordantly 0 times
+    3989336 (17.62%) aligned concordantly exactly 1 time
+    7269406 (32.10%) aligned concordantly >1 times
+49.72% overall alignment rate
+Processed 22646309 sequences in total
+
+
+Successfully deleted the temporary files 81M_R1.fastp-trim.fq.gz.temp.2_C_to_T.fastq, 81M_R1.fastp-trim.fq.gz.temp.2_G_to_A.fastq, 81M_R2.fastp-trim.fq.gz.temp.2_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.2_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	22646309
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	370579514
+
+Total methylated C's in CpG context:	4557663
+Total methylated C's in CHG context:	420065
+Total methylated C's in CHH context:	2169048
+Total methylated C's in Unknown context:	28237
+
+Total unmethylated C's in CpG context:	39476920
+Total unmethylated C's in CHG context:	59081353
+Total unmethylated C's in CHH context:	264874465
+Total unmethylated C's in Unknown context:	1060705
+
+C methylated in CpG context:	10.4%
+C methylated in CHG context:	0.7%
+C methylated in CHH context:	0.8%
+C methylated in unknown context (CN or CHN):	2.6%
+
+
+Chromosomal sequence could not be extracted for	LH00586:122:22HTFTLT4:7:2496:38791:20891_1:N:0:GAAGGAAG+GACGTCAT	XR_010102086.1	2
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    22576870 (99.69%) aligned concordantly 0 times
+    29992 (0.13%) aligned concordantly exactly 1 time
+    39447 (0.17%) aligned concordantly >1 times
+0.31% overall alignment rate
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    11403828 (50.36%) aligned concordantly 0 times
+    3994645 (17.64%) aligned concordantly exactly 1 time
+    7247836 (32.00%) aligned concordantly >1 times
+49.64% overall alignment rate
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    22575359 (99.69%) aligned concordantly 0 times
+    29569 (0.13%) aligned concordantly exactly 1 time
+    41381 (0.18%) aligned concordantly >1 times
+0.31% overall alignment rate
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    11386584 (50.28%) aligned concordantly 0 times
+    3992688 (17.63%) aligned concordantly exactly 1 time
+    7267037 (32.09%) aligned concordantly >1 times
+49.72% overall alignment rate
+Processed 22646309 sequences in total
+
+
+Successfully deleted the temporary files 81M_R1.fastp-trim.fq.gz.temp.4_C_to_T.fastq, 81M_R1.fastp-trim.fq.gz.temp.4_G_to_A.fastq, 81M_R2.fastp-trim.fq.gz.temp.4_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.4_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	22646309
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	370875685
+
+Total methylated C's in CpG context:	4563437
+Total methylated C's in CHG context:	421346
+Total methylated C's in CHH context:	2173019
+Total methylated C's in Unknown context:	28118
+
+Total unmethylated C's in CpG context:	39477167
+Total unmethylated C's in CHG context:	59132287
+Total unmethylated C's in CHH context:	265108429
+Total unmethylated C's in Unknown context:	1059296
+
+C methylated in CpG context:	10.4%
+C methylated in CHG context:	0.7%
+C methylated in CHH context:	0.8%
+C methylated in unknown context (CN or CHN):	2.6%
+
+
+Now waiting for all child processes to complete
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    22575813 (99.69%) aligned concordantly 0 times
+    29330 (0.13%) aligned concordantly exactly 1 time
+    41166 (0.18%) aligned concordantly >1 times
+0.31% overall alignment rate
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    22577213 (99.69%) aligned concordantly 0 times
+    29725 (0.13%) aligned concordantly exactly 1 time
+    39371 (0.17%) aligned concordantly >1 times
+0.31% overall alignment rate
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    11399637 (50.34%) aligned concordantly 0 times
+    3994784 (17.64%) aligned concordantly exactly 1 time
+    7251888 (32.02%) aligned concordantly >1 times
+49.66% overall alignment rate
+22646309 reads; of these:
+  22646309 (100.00%) were paired; of these:
+    11388419 (50.29%) aligned concordantly 0 times
+    3989216 (17.62%) aligned concordantly exactly 1 time
+    7268674 (32.10%) aligned concordantly >1 times
+49.71% overall alignment rate
+Processed 22646309 sequences in total
+
+
+Successfully deleted the temporary files 81M_R1.fastp-trim.fq.gz.temp.3_C_to_T.fastq, 81M_R1.fastp-trim.fq.gz.temp.3_G_to_A.fastq, 81M_R2.fastp-trim.fq.gz.temp.3_C_to_T.fastq and 81M_R2.fastp-trim.fq.gz.temp.3_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	22646309
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	370701999
+
+Total methylated C's in CpG context:	4561959
+Total methylated C's in CHG context:	421179
+Total methylated C's in CHH context:	2167486
+Total methylated C's in Unknown context:	27995
+
+Total unmethylated C's in CpG context:	39474686
+Total unmethylated C's in CHG context:	59095771
+Total unmethylated C's in CHH context:	264980918
+Total unmethylated C's in Unknown context:	1060671
+
+C methylated in CpG context:	10.4%
+C methylated in CHG context:	0.7%
+C methylated in CHH context:	0.8%
+C methylated in unknown context (CN or CHN):	2.6%
+
+
+
+
+Right, cleaning up now...
+
+Deleting temporary sequence files...
+Now merging BAM files 81M_R1.fastp-trim.fq.gz.temp.1_bismark_bt2_pe.bam 81M_R1.fastp-trim.fq.gz.temp.2_bismark_bt2_pe.bam 81M_R1.fastp-trim.fq.gz.temp.3_bismark_bt2_pe.bam 81M_R1.fastp-trim.fq.gz.temp.4_bismark_bt2_pe.bam into >>> 81M_R1.fastp-trim_bismark_bt2_pe.bam <<<
+Merging from file >> 81M_R1.fastp-trim.fq.gz.temp.1_bismark_bt2_pe.bam <<
+Merging from file >> 81M_R1.fastp-trim.fq.gz.temp.2_bismark_bt2_pe.bam <<
+Merging from file >> 81M_R1.fastp-trim.fq.gz.temp.3_bismark_bt2_pe.bam <<
+Merging from file >> 81M_R1.fastp-trim.fq.gz.temp.4_bismark_bt2_pe.bam <<
+
+Deleting temporary BAM files...
+Writing report to /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/output/aligned_full/81M_R1.fastp-trim_bismark_bt2_PE_report.txt
+Now merging temporary reports 81M_R1.fastp-trim.fq.gz.temp.1_bismark_bt2_PE_report.txt 81M_R1.fastp-trim.fq.gz.temp.2_bismark_bt2_PE_report.txt 81M_R1.fastp-trim.fq.gz.temp.3_bismark_bt2_PE_report.txt 81M_R1.fastp-trim.fq.gz.temp.4_bismark_bt2_PE_report.txt into >>> /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/output/aligned_full/81M_R1.fastp-trim_bismark_bt2_PE_report.txt <<<
+Merging from file >> 81M_R1.fastp-trim.fq.gz.temp.1_bismark_bt2_PE_report.txt <<
+Merging from file >> 81M_R1.fastp-trim.fq.gz.temp.2_bismark_bt2_PE_report.txt <<
+Merging from file >> 81M_R1.fastp-trim.fq.gz.temp.3_bismark_bt2_PE_report.txt <<
+Merging from file >> 81M_R1.fastp-trim.fq.gz.temp.4_bismark_bt2_PE_report.txt <<
+
+Printing a final merged alignment report for all individual sub-reports
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	90585236
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	1482677805
+
+Total methylated C's in CpG context:	18235490
+Total methylated C's in CHG context:	1684132
+Total methylated C's in CHH context:	8670264
+Total methylated C's in Unknown context:	112912
+
+Total unmethylated C's in CpG context:	157897003
+Total unmethylated C's in CHG context:	236390620
+Total unmethylated C's in CHH context:	1059800296
+Total unmethylated C's in Unknown context:	4239215
+
+C methylated in CpG context:	10.4%
+C methylated in CHG context:	0.7%
+C methylated in CHH context:	0.8%
+C methylated in unknown context (CN or CHN):	2.6%
+
+
+Deleting temporary report files...
+Bismark completed in 0d 5h 46m 6s
+
+====================
+Bismark run complete
+====================
+

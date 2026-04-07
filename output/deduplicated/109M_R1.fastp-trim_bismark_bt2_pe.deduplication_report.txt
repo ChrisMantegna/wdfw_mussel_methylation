@@ -1,0 +1,7 @@
+
+Total number of alignments analysed in ../output/aligned_full/109M_R1.fastp-trim_bismark_bt2_pe.bam:	44021724
+Total number duplicated alignments removed:	5473959 (12.43%)
+Duplicated alignments were found at:	4449890 different position(s)
+
+Total count of deduplicated leftover sequences: 38547765 (87.57% of total)
+

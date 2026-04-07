@@ -1,0 +1,15 @@
+Processing paired-end Bismark output file(s) (SAM format):
+../output/aligned_full/105M_R1.fastp-trim_bismark_bt2_pe.bam
+
+
+If there are several alignments to a single position in the genome the first alignment will be chosen. Since the input files are not in any way sorted this is a near-enough random selection of reads.
+
+Checking file >>../output/aligned_full/105M_R1.fastp-trim_bismark_bt2_pe.bam<< for signs of file truncation...
+
+samtools view: writing to standard output failed: Broken pipe
+samtools view: error reading file "../output/aligned_full/105M_R1.fastp-trim_bismark_bt2_pe.bam": Broken pipe
+samtools view: error closing standard output: -1
+
+...passed!
+Output file is: 105M_R1.fastp-trim_bismark_bt2_pe.deduplicated.bam
+

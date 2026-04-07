@@ -1,0 +1,131 @@
+Bowtie 2 seems to be working fine (tested command 'bowtie2 --version' [2.4.4])
+Output format is BAM (default)
+Alignments will be written out in BAM format. Samtools found here: '/usr/bin/samtools'
+Reference genome folder provided is ../data/ref/	(absolute path is '/home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/data/ref/)'
+FastQ format assumed (by default)
+Processing sequences up to read no. 10000 from the input file
+Attention: using more than 4 cores per alignment thread has been reported to have diminishing returns. If possible try to limit -p to a value of 4
+Each Bowtie 2 instance is going to be run with 8 threads. Please monitor performance closely and tune down if necessary!
+
+Input files to be analysed (in current folder '/home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/code'):
+../data/trimmed/fastp/70M_R1.fastp-trim.fq.gz
+../data/trimmed/fastp/70M_R2.fastp-trim.fq.gz
+Library was specified to be not strand-specific (non-directional), therefore alignments to all four possible bisulfite strands (OT, CTOT, OB and CTOB) will be reported
+Output will be written into the directory: /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/output/all_bismark_min_score/70M_L_0_neg1.0/
+Setting parallelization to single-threaded (default)
+
+Summary of all aligner options:	-q --score-min L,0,-1.0 -p 8 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+Current working directory is: /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/code
+
+Now reading in and storing sequence information of the genome specified in: /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/data/ref/
+
+Single-core mode: setting pid to 1
+
+Paired-end alignments will be performed
+=======================================
+
+The provided filenames for paired-end alignments are ../data/trimmed/fastp/70M_R1.fastp-trim.fq.gz and ../data/trimmed/fastp/70M_R2.fastp-trim.fq.gz
+Input files are in FastQ format
+Processing reads up to sequence no. 10000 from ../data/trimmed/fastp/70M_R1.fastp-trim.fq.gz
+Writing a C -> T converted version of the input file 70M_R1.fastp-trim.fq.gz to 70M_R1.fastp-trim.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file 70M_R1.fastp-trim.fq.gz to 70M_R1.fastp-trim.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file 70M_R1.fastp-trim.fq.gz (10001 sequences in total)
+
+
+gzip: stdout: Broken pipe
+Processing reads up to sequence no. 10000 from ../data/trimmed/fastp/70M_R2.fastp-trim.fq.gz
+Writing a C -> T converted version of the input file 70M_R2.fastp-trim.fq.gz to 70M_R2.fastp-trim.fq.gz_C_to_T.fastq
+Writing a G -> A converted version of the input file 70M_R2.fastp-trim.fq.gz to 70M_R2.fastp-trim.fq.gz_G_to_A.fastq
+
+Created C -> T as well as G -> A converted versions of the FastQ file 70M_R2.fastp-trim.fq.gz (10001 sequences in total)
+
+Input files are 70M_R1.fastp-trim.fq.gz_C_to_T.fastq and 70M_R1.fastp-trim.fq.gz_G_to_A.fastq and 70M_R2.fastp-trim.fq.gz_C_to_T.fastq and 70M_R2.fastp-trim.fq.gz_G_to_A.fastq (FastQ)
+Now running 4 individual instances of Bowtie 2 against the bisulfite genome of /home/shared/8TB_HDD_02/cnmntgna/wdfw_mussel_methylation/data/ref/ with the specified options: -q --score-min L,0,-1.0 -p 8 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500
+
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2CTgenome (reading in sequences from 70M_R1.fastp-trim.fq.gz_C_to_T.fastq and 70M_R2.fastp-trim.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-1.0 -p 8 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:2400:1014_1:N:0:CATGGCTA+CACACATC/1	77	*	0	0	*	*	0	0	ATAAGGATTGTTATGAAATAGTTAAAAGTATTTAAAGTGGTGTATTATATTAGTTAGTTTATTAATTAATTGATGTATTTATTTGAAAGTAAAATTAATGATTGGAATTTT	-II9IIIIIIIIIIIIIIIIIII-IIIIIIIIIIIIIIIIIIIIIII-IIIII9I9IIIIIIIIIIIIIII-I9III--I-IIII9I9I-IIII9I9IIII9-9IIIIIII	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:2400:1014_2:N:0:CATGGCTA+CACACATC/2	141	*	0	0	*	*	0	0	CATAAATTTTATTCAATAATCTAACATAAAAATAACCATTAAAAATATATCTTCTCTAATAAACAAAATTCCAATCATTAATTTTACTTTCAAATATATACATCAATTAAT	IIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIII9IIIIIIIIIIIII9I9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII99IIIIIIIIIIIIIIIII	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2GAgenome (reading in sequences from 70M_R1.fastp-trim.fq.gz_G_to_A.fastq and 70M_R2.fastp-trim.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-1.0 -p 8 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --norc))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:2400:1014_1:N:0:CATGGCTA+CACACATC/1	77	*	0	0	*	*	0	0	ATAAAAATTATTATAAAATAATTAAAAATATTTAAAATAATATATTATATTAATTAATTTATTAATTAATTAATATACCTATTTAAAAATAAAATTAATAATTAAAATTTT	-II9IIIIIIIIIIIIIIIIIII-IIIIIIIIIIIIIIIIIIIIIII-IIIII9I9IIIIIIIIIIIIIII-I9III--I-IIII9I9I-IIII9I9IIII9-9IIIIIII	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:2400:1014_2:N:0:CATGGCTA+CACACATC/2	141	*	0	0	*	*	0	0	TATAAATTTTATTTAATAATTTAATATAAAAATAATTATTAAAAATATATTTTTTTTAATAAATAAAATTTTAATTATTAATTTTATTTTTAAATATATATATTAATTAAT	IIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIII9IIIIIIIIIIIII9I9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII99IIIIIIIIIIIIIIIII	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for GAread1CTread2CTgenome (reading in sequences from 70M_R1.fastp-trim.fq.gz_G_to_A.fastq and 70M_R2.fastp-trim.fq.gz_C_to_T.fastq, with the options: -q --score-min L,0,-1.0 -p 8 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:2400:1014_1:N:0:CATGGCTA+CACACATC/1	77	*	0	0	*	*	0	0	ATAAAAATTATTATAAAATAATTAAAAATATTTAAAATAATATATTATATTAATTAATTTATTAATTAATTAATATACCTATTTAAAAATAAAATTAATAATTAAAATTTT	-II9IIIIIIIIIIIIIIIIIII-IIIIIIIIIIIIIIIIIIIIIII-IIIII9I9IIIIIIIIIIIIIII-I9III--I-IIII9I9I-IIII9I9IIII9-9IIIIIII	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:2400:1014_2:N:0:CATGGCTA+CACACATC/2	141	*	0	0	*	*	0	0	TATAAATTTTATTTAATAATTTAATATAAAAATAATTATTAAAAATATATTTTTTTTAATAAATAAAATTTTAATTATTAATTTTATTTTTAAATATATATATTAATTAAT	IIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIII9IIIIIIIIIIIII9I9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII99IIIIIIIIIIIIIIIII	YT:Z:UP
+Now starting a Bowtie 2 paired-end alignment for CTread1GAread2GAgenome (reading in sequences from 70M_R1.fastp-trim.fq.gz_C_to_T.fastq and 70M_R2.fastp-trim.fq.gz_G_to_A.fastq, with the options: -q --score-min L,0,-1.0 -p 8 --reorder --ignore-quals --no-mixed --no-discordant --dovetail --maxins 500 --nofw))
+Found first alignment:
+LH00469:254:22HGFVLT4:2:1101:2400:1014_1:N:0:CATGGCTA+CACACATC/1	77	*	0	0	*	*	0	0	ATAAGGATTGTTATGAAATAGTTAAAAGTATTTAAAGTGGTGTATTATATTAGTTAGTTTATTAATTAATTGATGTATTTATTTGAAAGTAAAATTAATGATTGGAATTTT	-II9IIIIIIIIIIIIIIIIIII-IIIIIIIIIIIIIIIIIIIIIII-IIIII9I9IIIIIIIIIIIIIII-I9III--I-IIII9I9I-IIII9I9IIII9-9IIIIIII	YT:Z:UP
+LH00469:254:22HGFVLT4:2:1101:2400:1014_2:N:0:CATGGCTA+CACACATC/2	141	*	0	0	*	*	0	0	CATAAATTTTATTCAATAATCTAACATAAAAATAACCATTAAAAATATATCTTCTCTAATAAACAAAATTCCAATCATTAATTTTACTTTCAAATATATACATCAATTAAT	IIIIIIIIIIIIIIIIIIIIII9IIIIIIIIIII9IIIIIIIIIIIII9I9IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII99IIIIIIIIIIIIIIIII	YT:Z:UP
+
+>>> Writing bisulfite mapping results to 70M_L_0_neg1.0_pe.bam <<<
+
+
+Reading in the sequence files ../data/trimmed/fastp/70M_R1.fastp-trim.fq.gz and ../data/trimmed/fastp/70M_R2.fastp-trim.fq.gz
+Chromosomal sequence could not be extracted for	LH00469:254:22HGFVLT4:2:1101:35651:2905_1:N:0:CATGGCTA+CACACATC	XM_063558437.1	1
+10000 reads; of these:
+  10000 (100.00%) were paired; of these:
+    9745 (97.45%) aligned concordantly 0 times
+    111 (1.11%) aligned concordantly exactly 1 time
+    144 (1.44%) aligned concordantly >1 times
+2.55% overall alignment rate
+10000 reads; of these:
+  10000 (100.00%) were paired; of these:
+    9737 (97.37%) aligned concordantly 0 times
+    124 (1.24%) aligned concordantly exactly 1 time
+    139 (1.39%) aligned concordantly >1 times
+2.63% overall alignment rate
+10000 reads; of these:
+  10000 (100.00%) were paired; of these:
+    3720 (37.20%) aligned concordantly 0 times
+    1584 (15.84%) aligned concordantly exactly 1 time
+    4696 (46.96%) aligned concordantly >1 times
+62.80% overall alignment rate
+10000 reads; of these:
+  10000 (100.00%) were paired; of these:
+    3687 (36.87%) aligned concordantly 0 times
+    1627 (16.27%) aligned concordantly exactly 1 time
+    4686 (46.86%) aligned concordantly >1 times
+63.13% overall alignment rate
+Processed 10000 sequences in total
+
+
+Successfully deleted the temporary files 70M_R1.fastp-trim.fq.gz_C_to_T.fastq, 70M_R1.fastp-trim.fq.gz_G_to_A.fastq, 70M_R2.fastp-trim.fq.gz_C_to_T.fastq and 70M_R2.fastp-trim.fq.gz_G_to_A.fastq
+
+Final Alignment report
+======================
+Sequence pairs analysed in total:	10000
+Final Cytosine Methylation Report
+=================================
+Total number of C's analysed:	195550
+
+Total methylated C's in CpG context:	2902
+Total methylated C's in CHG context:	228
+Total methylated C's in CHH context:	1467
+Total methylated C's in Unknown context:	29
+
+Total unmethylated C's in CpG context:	21833
+Total unmethylated C's in CHG context:	31774
+Total unmethylated C's in CHH context:	137346
+Total unmethylated C's in Unknown context:	1047
+
+C methylated in CpG context:	11.7%
+C methylated in CHG context:	0.7%
+C methylated in CHH context:	1.1%
+C methylated in unknown context (CN or CHN):	2.7%
+
+
+Bismark completed in 0d 0h 0m 29s
+
+====================
+Bismark run complete
+====================
+
+
+gzip: stdout: Broken pipe
+
+gzip: stdout: Broken pipe
+
+gzip: stdout: Broken pipe

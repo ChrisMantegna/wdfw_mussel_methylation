@@ -1,0 +1,7 @@
+sample	92M_R1.fastp-trim_bismark_bt2_pe.deduplicated
+input_file	92M_R1.fastp-trim_bismark_bt2_pe.deduplicated.bismark.cov.gz
+min_coverage	5
+total_loci	28553095
+kept_loci	9918334
+removed_loci	18634761
+percent_kept	34.7365
