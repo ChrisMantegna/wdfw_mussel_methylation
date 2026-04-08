@@ -6,6 +6,24 @@ methyl/
 qc/
 refs/
 logs/
+# local environments
+env/
+.multiqc_env/
+MultiQC.v1.12.dev0_local/
+
+# OS / editor / R clutter
+.DS_Store
+.Rhistory
+.Rproj.user/
+.Rprofile
+
+# outputs and generated files
+output/
+data/
+
+# local notes / temp files
+merge_conflicts.txt
+process_updates.Rmd
 *.fastq*
 *.bam
 *.bai
