@@ -1,0 +1,25 @@
+sample_id,sample_number,site_name,replicate_within_site,pah_group,pah_rank,treatment,sum_16_pah
+69M_R1,69,"Elliot Bay, Myrtle Edwards",1,High,6,1,12078.42
+70M_R1,70,"Elliot Bay, Myrtle Edwards",2,High,6,1,12078.42
+71M_R1,71,"Elliot Bay, Myrtle Edwards",3,High,6,1,12078.42
+72M_R1,72,"Elliot Bay, Myrtle Edwards",4,High,6,1,12078.42
+78M_R1,78,"Seattle Aquarium, Pier 59",1,High,5,1,3304.96
+79M_R1,79,"Seattle Aquarium, Pier 59",2,High,5,1,3304.96
+80M_R1,80,"Seattle Aquarium, Pier 59",3,High,5,1,3304.96
+81M_R1,81,"Seattle Aquarium, Pier 59",4,High,5,1,3304.96
+92M_R1,92,"Smith Cove, Terminal 91",1,High,4,1,7153.28
+93M_R1,93,"Smith Cove, Terminal 91",2,High,4,1,7153.28
+94M_R1,94,"Smith Cove, Terminal 91",3,High,4,1,7153.28
+95M_R1,95,"Smith Cove, Terminal 91",4,High,4,1,7153.28
+105M_R1,105,Hood Canal Holly,1,Low,2,0,116.1
+106M_R1,106,Hood Canal Holly,2,Low,2,0,116.1
+107M_R1,107,Hood Canal Holly,3,Low,2,0,116.1
+109M_R1,109,Hood Canal Holly,4,Low,2,0,116.1
+239M_R1,239,Aiston Preserve,1,Low,1,0,97.4
+240M_R1,240,Aiston Preserve,2,Low,1,0,97.4
+241M_R1,241,Aiston Preserve,3,Low,1,0,97.4
+242M_R1,242,Aiston Preserve,4,Low,1,0,97.4
+269M_R1,269,"Broad Spit, Fisherman's Point",1,Low,3,0,127.26
+270M_R1,270,"Broad Spit, Fisherman's Point",2,Low,3,0,127.26
+271M_R1,271,"Broad Spit, Fisherman's Point",3,Low,3,0,127.26
+272M_R1,272,"Broad Spit, Fisherman's Point",4,Low,3,0,127.26
