@@ -1,0 +1,61 @@
+---
+title: "06.0- methylKit - Data Import and QC"
+---
+
+# Load packages & data
+```{r}
+library(dplyr)
+library(ggplot2)
+library(methylKit)
+library(pheatmap)
+library(rcolorbrewer)
+library(tidyverse)
+
+# Load metadata
+meta <- read.csv("file path")
+
+```
+
+# Load methylation files & define paths
+```{bash}
+
+# File paths
+# add metadata here instead of with the libraries
+# paths to methylation files on Raven
+
+```
+
+```{r}
+
+# Import methylation data
+myobj <- methRead(
+  location = file.list,
+  sample.id = meta$sample_id,
+  assembly = "Mytilus_trossulus",
+  treatment = meta$treatment,
+  context = "CpG"
+)
+
+```
+
+# QC plots
+```{r}
+
+getCoverageStats(myobj[[1]], plot=TRUE)
+getMethylationStats(myobj[[1]], plot=TRUE)
+
+```
+
+# Filter coverage & save
+```{r}
+
+myobj_filtered <- filterByCoverage(
+  myobj,
+  lo.count = 5,
+  hi.perc = 99.9)
+
+save(myobj_filtered,
+     file = "output/methylkit/objects/methylkit_filtered.RData")
+
+```
+

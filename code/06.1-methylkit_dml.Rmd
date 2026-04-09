@@ -1,0 +1,53 @@
+---
+title: "06.1 - MethylKit: DMLs
+---
+
+# Load libraries & data
+
+```{r}
+
+library(dplyr)
+library(ggplot2)
+library(methylKit)
+library(pheatmap)
+library(rcolorbrewer)
+library(tidyverse)
+
+#object
+load("output/methylkit/objects/methylkit_filtered.RData")
+
+```
+
+# Unite & create PCA
+```{r}
+
+meth <- unite(myobj_filtered, destrand=TRUE)
+
+# PCA
+PCASamples(meth)
+
+# Clustering
+clusterSamples(meth)
+
+# Differential methylation
+diff <- calculateDiffMeth(meth)
+
+# Significant loci
+dml <- getMethylDiff(diff, difference=25, qvalue=0.01)
+
+# Save
+write.csv(dml, "output/methylkit/dml/dml_25pct_q001.csv")
+
+# Export BED
+bed <- data.frame(
+  chr = dml$chr,
+  start = dml$start,
+  end = dml$end
+)
+
+write.table(bed,
+  "output/methylkit/dml/dml_25pct_q001.bed",
+  sep="\t", quote=FALSE, row.names=FALSE, col.names=FALSE)
+
+```
+
