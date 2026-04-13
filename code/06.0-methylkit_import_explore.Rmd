@@ -1,0 +1,116 @@
+---
+title: "06.0- methylKit - Data Prep, QC, and PCA"
+---
+
+# Load libraries
+```{r}
+library(dplyr)
+library(ggplot2)
+library(methylKit)
+install.packages("pheatmap")
+library(pheatmap)
+library(rcolorbrewer)
+library(tidyverse)
+
+```
+
+# Create output directories 
+```{r}
+
+dir.create("output/methylkit/objects", recursive = TRUE, showWarnings = FALSE)
+dir.create("output/methylkit/qc", recursive = TRUE, showWarnings = FALSE)
+
+```
+
+# Load metadata
+```{r}
+
+meta <- read.csv("../metadata/sample_metadata.csv", stringsAsFactors = FALSE)
+glimpse(meta)
+
+```
+
+
+# Define extraction file paths
+```{r}
+
+meth_dir <- "output/methylation_extraction"
+
+file.list <- file.path(meth_dir, meta$file_name)
+
+# Safety check
+missing_files <- file.list[!file.exists(file.list)]
+if (length(missing_files) > 0) {
+  stop("Missing files:\n", paste(missing_files, collapse = "\n"))
+}
+
+```
+
+# Import methylation data
+```{r}
+
+myobj <- methRead(
+  location   = file.list,
+  sample.id  = meta$sample_id,
+  assembly   = "Mytilus_trossulus",
+  treatment  = meta$treatment,
+  context    = "CpG"
+)
+
+#save
+save(myobj, file = "output/methylkit/objects/methylkit_raw.RData")
+
+```
+
+# QC plots
+```{r}
+
+pdf("output/methylkit/qc/coverage_raw.pdf")
+lapply(myobj, getCoverageStats, plot = TRUE)
+dev.off()
+
+pdf("output/methylkit/qc/methylation_raw.pdf")
+lapply(myobj, getMethylationStats, plot = TRUE)
+dev.off()
+
+```
+
+# Filter coverage & save
+```{r}
+
+myobj_filtered <- filterByCoverage(
+  myobj,
+  lo.count = 5,
+  hi.perc = 99.9
+)
+
+#save
+save(myobj_filtered, file = "output/methylkit/objects/methylkit_filtered.RData")
+
+```
+
+# Unite
+```{r}
+
+#this steps puts all of the samples into a single shared CpG dataset for comparison
+
+meth <- unite(myobj_filtered, destrand = TRUE) #what is destrand doing here?
+
+#save
+save(meth, file = "output/methylkit/objects/methylkit_united.RData")
+
+```
+
+# PCA
+```{r}
+
+pdf("output/methylkit/qc/pca_cpg.pdf")
+PCASamples(meth)
+dev.off()
+
+pdf("output/methylkit/qc/cluster_cpg.pdf")
+clusterSamples(meth)
+dev.off()
+
+```
+

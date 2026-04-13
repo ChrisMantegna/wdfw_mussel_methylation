@@ -1,0 +1,115 @@
+---
+title: "06.1 - MethylKit: Differential Methylation (DML/ DMR)"
+---
+
+# Load libraries
+```{r}
+
+library(methylKit)
+library(GenomicRanges)
+library(tidyverse)
+
+```
+
+# Create output directories
+```{r}
+
+dir.create("output/methylkit/dml", recursive = TRUE, showWarnings = FALSE)
+dir.create("output/methylkit/dmr", recursive = TRUE, showWarnings = FALSE)
+
+```
+
+# Load data
+```{r}
+
+load("output/methylkit/objects/methylkit_united.RData")
+load("output/methylkit/objects/methylkit_filtered.RData")
+
+```
+
+# DML
+```{r}
+
+#calculate
+diff <- calculateDiffMeth(meth)
+
+#save
+save(diff, file = "output/methylkit/objects/methylkit_diff_cpg.RData")
+
+```
+
+```{r}
+
+#pull out the significant ones
+dml <- getMethylDiff(diff, difference = 25, qvalue = 0.01)
+
+#save
+write.csv(dml,
+          "output/methylkit/dml/dml_25pct_q001.csv",
+          row.names = FALSE)
+
+```
+
+```{r}
+
+#save BED file
+write.table(
+  data.frame(chr=dml$chr, start=dml$start, end=dml$end),
+  "output/methylkit/dml/dml_25pct_q001.bed",
+  sep="\t", quote=FALSE, row.names=FALSE, col.names=FALSE
+)
+
+```
+
+# DMR
+```{r}
+
+#define regions
+gr <- as(meth, "GRanges")
+regions <- reduce(gr, min.gapwidth = 500)
+
+```
+
+```{r}
+
+#summarize regions
+region_counts <- regionCounts(myobj_filtered, regions)
+meth_regions <- unite(region_counts, destrand = TRUE)
+
+```
+
+```{r}
+
+#calculate
+diff_regions <- calculateDiffMeth(meth_regions)
+
+#save
+save(diff_regions,
+     file = "output/methylkit/objects/methylkit_diff_regions.RData")
+
+```
+
+```{r}
+
+#pull out the significant ones
+dmr <- getMethylDiff(diff_regions, difference = 25, qvalue = 0.01)
+
+#save
+write.csv(dmr,
+          "output/methylkit/dmr/dmr_25pct_q001.csv",
+          row.names = FALSE)
+
+```
+
+```{r}
+
+#save BED file
+write.table(
+  data.frame(chr=dmr$chr, start=dmr$start, end=dmr$end),
+  "output/methylkit/dmr/dmr_25pct_q001.bed",
+  sep="\t", quote=FALSE, row.names=FALSE, col.names=FALSE
+)
+
+```
+
+

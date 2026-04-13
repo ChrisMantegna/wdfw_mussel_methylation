@@ -1,0 +1,113 @@
+---
+title: "06.3 - MethylKit: Tiles"
+---
+
+
+# Load libraries
+```{r}
+
+library(methylKit)
+library(tidyverse)
+
+```
+
+# Load object
+```{r}
+
+load("output/methylkit/objects/methylkit_filtered.RData")
+
+```
+
+# Create output directories
+```{r}
+
+dir.create("output/methylkit/tiles", recursive = TRUE, showWarnings = FALSE)
+dir.create("output/methylkit/qc", recursive = TRUE, showWarnings = FALSE)
+
+```
+
+# Create tiles
+```{r}
+
+#make them
+tiles <- tileMethylCounts(
+  myobj_filtered,
+  win.size = 1000,
+  step.size = 1000
+)
+
+```
+
+```{r}
+
+#filter them
+tiles_filtered <- filterByCoverage(
+  tiles,
+  lo.count = 5,
+  hi.perc = 99
+)
+```
+
+```{r}
+
+#bring them together - unite
+meth_tiles <- unite(tiles_filtered, destrand = TRUE)
+
+#save
+save(meth_tiles,
+     file = "output/methylkit/objects/methylkit_tiles_united.RData")
+
+```
+
+# PCA
+```{r}
+
+pdf("output/methylkit/qc/pca_tiles.pdf")
+PCASamples(meth_tiles)
+dev.off()
+
+pdf("output/methylkit/qc/cluster_tiles.pdf")
+clusterSamples(meth_tiles)
+dev.off()
+```
+
+# Differential methylation
+```{r}
+
+diff_tiles <- calculateDiffMeth(meth_tiles)
+
+#save
+save(diff_tiles,
+     file = "output/methylkit/objects/methylkit_diff_tiles.RData")
+
+```
+
+```{r}
+
+#pull out significant ones
+tiles_sig <- getMethylDiff(diff_tiles, difference = 25, qvalue = 0.01)
+
+#save
+write.csv(tiles_sig,
+          "output/methylkit/tiles/tiles_1kb_25pct_q001.csv",
+          row.names = FALSE)
+
+```
+
+```{r}
+
+#save BED file
+write.table(
+  data.frame(chr=tiles_sig$chr, start=tiles_sig$start, end=tiles_sig$end),
+  "output/methylkit/tiles/tiles_1kb_25pct_q001.bed",
+  sep="\t", quote=FALSE, row.names=FALSE, col.names=FALSE
+)
+
+```
+
+
+
+
+
+
+
